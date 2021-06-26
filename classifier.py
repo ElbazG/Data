@@ -18,7 +18,7 @@ def read_data():
     return img_list
 
 
-def put_data(var):
+def write_data(var):
     file = open('results.csv', 'w+', newline='')
     with file:
         write = csv.writer(file)
@@ -26,6 +26,22 @@ def put_data(var):
     return file
 
 
+def count_correct(csv_file):
+    counter = 0
+    with open(csv_file, newline='') as file:
+        reader = csv.DictReader(file)
+        exp_1 = [row for row in reader if row['path'].startswith('exp_1') and row['direction'] == 'left']
+        exp_2 = [row for row in reader if row['path'].startswith('exp_2') and row['direction'] == 'left']
+        for row in exp_1:
+            print(row)
+            counter = counter + 1
+        for row in exp_2:
+            print(row)
+
+
+
+
 if __name__ == "__main__":
-    x = read_data()
-    results = put_data(x)
+    #x = read_data()
+    #results = write_data(x)
+    count_correct('results.csv')
