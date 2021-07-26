@@ -2,6 +2,9 @@
 
 import csv
 import sys
+import os
+import glob
+import pandas as pd
 
 data = sys.argv[1]
 img_list = []
@@ -14,11 +17,11 @@ def read_data():
         reader = csv.DictReader(file)
         for row in reader:
             if row['img3'].startswith('exp_1_50'):
-                img_list.append((row['img3'], row['key_resp_4.keys'], "old", 25))
+                img_list.append((row['img3'], row['key_resp_4.keys'], "old", "twenty-five"))
             elif row['img3'].startswith('exp_2_50'):
-                img_list.append((row['img3'], row['key_resp_4.keys'], "old", 75))
+                img_list.append((row['img3'], row['key_resp_4.keys'], "old", "seventy-five"))
             elif row['img3'].startswith('exp_3_50'):
-                img_list.append((row['img3'], row['key_resp_4.keys'], "new", 50),)
+                img_list.append((row['img3'], row['key_resp_4.keys'], "new", "fifty"), )
     return img_list
 
 
