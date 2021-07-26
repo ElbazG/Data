@@ -2,9 +2,6 @@
 
 import csv
 import sys
-import os
-import glob
-import pandas as pd
 
 data = sys.argv[1]
 img_list = []
