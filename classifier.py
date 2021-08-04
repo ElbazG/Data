@@ -14,11 +14,11 @@ def read_data():
         reader = csv.DictReader(file)
         for row in reader:
             if row['img3'].startswith('exp_1_50'):
-                img_list.append((row['img3'], row['key_resp_4.keys'], "old", "twenty-five"))
+                img_list.append((row['img3'], row['key_resp_4.keys'], "old", "twenty-five", row['key_resp_4.rt']))
             elif row['img3'].startswith('exp_2_50'):
-                img_list.append((row['img3'], row['key_resp_4.keys'], "old", "seventy-five"))
+                img_list.append((row['img3'], row['key_resp_4.keys'], "old", "seventy-five", row['key_resp_4.rt']))
             elif row['img3'].startswith('exp_3_50'):
-                img_list.append((row['img3'], row['key_resp_4.keys'], "new", "fifty"), )
+                img_list.append((row['img3'], row['key_resp_4.keys'], "new", "fifty",row['key_resp_4.rt']))
     return img_list
 
 
