@@ -13,3 +13,5 @@ Input: None. Output: Combined CSV file.
 modulateImColor2.m -
 Matlab code to change the image colors by given factor
 
+scriptforphoto.m - 
+Matlab code that changes multiple images by using modulatteImcolor2.m
